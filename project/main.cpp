@@ -13,6 +13,8 @@ int main(int argc, const char * argv[])
 {
     BinaryWeightedTree bwt;
     
+    printf("Populate dictionary:\n\n");
+    
     while (true) {
         std::string input;
         std::cin >> input;
@@ -24,9 +26,15 @@ int main(int argc, const char * argv[])
         bwt.insert(input);
     }
     
+#if 0
     printf("Printing tree...\n");
-    //bst.printTree();
-    bwt.printTopThree();
+    bwt.printTree();
+#else
+    printf("Enter word to find matches for:\n");
+    std::string input;
+    std::cin >> input;
+    bwt.printTopWords(input);
+#endif
     
     return 0;
 }

@@ -12,6 +12,9 @@
 #include <iostream>
 
 
+#define NUM_TOP_WORDS 3
+
+
 struct BSTNode {
     std::string word;
     int         weight;
@@ -27,10 +30,30 @@ public:
     BSTNode* search(std::string word);
     void insert(std::string str);
     void printTree();
-    void printTopThree();
+    void printTopWords(std::string word);
     
 protected:
     void printTreeInternal(BSTNode *node);
+    void printTopWordsInternal(BSTNode *node, std::string word);
+    
+    
+    class TopWords
+    {
+    public:
+        TopWords(int n = NUM_TOP_WORDS)
+        {
+            *m_pNodes = new BSTNode[n];
+        }
+        ~TopWords()
+        {
+            delete [] m_pNodes;
+        }
+        void insert(BSTNode* node) {}
+        
+    private:
+        BSTNode **m_pNodes;
+    };
+    
     
 private:
     BSTNode *m_head;

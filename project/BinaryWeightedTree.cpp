@@ -20,6 +20,17 @@ BSTNode* BinaryWeightedTree::search(std::string word)
     // make string lower case for easier compare
     std::transform(word.begin(), word.end(), word.begin(), ::tolower);
     
+    BSTNode *curr = m_head;
+    
+    while (nullptr != curr) {
+        if (word.compare(curr->word) > 0) {
+            curr = curr->rightChild;
+        }
+        else if (word.compare(curr->word) <= 0) {
+            return curr;
+        }
+    }
+    
     return nullptr;
 }
 
@@ -58,9 +69,12 @@ void BinaryWeightedTree::printTree()
 }
 
 
-void BinaryWeightedTree::printTopThree()
+void BinaryWeightedTree::printTopWords(std::string word)
 {
+    // Find subtree containing possible matches
+    BSTNode *node = search(word);
     
+    printTopWordsInternal(node, word);
 }
 
 
@@ -84,5 +98,30 @@ void BinaryWeightedTree::printTreeInternal(BSTNode *node)
     // Print right subtree
     if (nullptr != node->rightChild) {
         printTreeInternal(node->rightChild);
+    }
+}
+
+
+void BinaryWeightedTree::printTopWordsInternal(BSTNode *node, std::string word)
+{
+    // Base case
+    if (nullptr == node) {
+        return;
+    }
+    
+    // Traverse left subtree until a word is found that is
+    // less than the input word
+    if (nullptr != node->leftChild) {
+        if (node->leftChild->word.compare(word) >= 0) {
+            printTopWordsInternal(node->leftChild, word);
+        }
+    }
+    
+    // Print the node
+    printf("%s\n", node->word.c_str());
+    
+    // Traverse right subtree
+    if (nullptr != node->rightChild) {
+        printTopWordsInternal(node->rightChild, word);
     }
 }
