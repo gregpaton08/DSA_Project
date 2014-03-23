@@ -47,7 +47,7 @@ void BinaryWeightedTree::insert(std::string str)
         if ((*curr)->word.compare(str) < 0) {
             curr = &((*curr)->rightChild);
         }
-        else if (m_head->word.compare(str) > 0) {
+        else if ((*curr)->word.compare(str) > 0) {
             curr = &((*curr)->leftChild);
         }
         else {
