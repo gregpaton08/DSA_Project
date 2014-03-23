@@ -7,12 +7,26 @@
 //
 
 #include <iostream>
+#include "BinaryWeightedTree.h"
 
 int main(int argc, const char * argv[])
 {
-
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    BinarySearchTree bst;
+    
+    while (true) {
+        std::string input;
+        std::cin >> input;
+        
+        if (std::string::npos != input.find("QUIT")) {
+            break;
+        }
+        
+        bst.insert(input);
+    }
+    
+    printf("Printing tree...\n");
+    bst.printTree();
+    
     return 0;
 }
 
