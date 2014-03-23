@@ -32,31 +32,79 @@ TopWords::~TopWords()
 }
 
 
-void TopWords::insert(BSTNode *bstnode)
+bool TopWords::init(int n)
 {
+    m_numWords = n;
+    
+    if (m_numWords < 0) {
+        m_numWords = -1;
+        return false;
+    }
+    
+    return true;
+}
+
+
+void TopWords::insert(BWTNode *bwtnode)
+{
+    if (m_numWords < 0) {
+        return;
+    }
+    
+    // If list is empty then add node
     if (nullptr == m_pHead) {
         m_pHead = new TopWordNode;
-        m_pHead->bstnode = bstnode;
+        m_pHead->node = bwtnode;
         m_pHead->next = nullptr;
+        return;
+    }
+    // If word is already in list then return
+    else if (0 == m_pHead->node->word.compare(bwtnode->word)) {
+        return;
     }
     
     TopWordNode **prev = &m_pHead;
     TopWordNode **curr = &m_pHead->next;
     
     for (int i = 1; i < m_numWords; ++i) {
+        // If list is not full then add node
         if (nullptr == *curr) {
             *curr = new TopWordNode;
-            (*curr)->bstnode = bstnode;
+            (*curr)->node = bwtnode;
             (*curr)->next = nullptr;
             return;
         }
-        else if (bstnode->weight > (*curr)->bstnode->weight) {
+        // If word is already in list then return
+        else if (0 == (*curr)->node->word.compare(bwtnode->word)) {
+            return;
+        }
+        // If node has a greater weight than that in the list
+        // then insert the new node
+        else if (bwtnode->weight > (*curr)->node->weight ||
+                 (bwtnode->weight == (*curr)->node->weight &&
+                 bwtnode->word.compare((*curr)->node->word) < 0)) {
             TopWordNode *newNode = new TopWordNode;
-            newNode->bstnode = bstnode;
+            newNode->node = bwtnode;
             newNode->next = *curr;
             (*prev)->next = newNode;
             removeLastNode();
+            return;
         }
+        else {
+            prev = curr;
+            curr = &(*curr)->next;
+        }
+    }
+}
+
+
+void TopWords::print()
+{
+    TopWordNode *curr = m_pHead;
+    
+    while (nullptr != curr) {
+        printf("%s\n", curr->node->word.c_str());
+        curr = curr->next;
     }
 }
 

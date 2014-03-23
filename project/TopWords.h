@@ -18,7 +18,9 @@ class TopWords
 public:
     TopWords();
     ~TopWords();
-    void insert(BSTNode *bstnode);
+    bool init(int n);
+    void insert(BWTNode *bwtnode);
+    void print();
     
 protected:
     void removeLastNode();

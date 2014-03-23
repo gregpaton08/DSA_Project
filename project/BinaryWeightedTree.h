@@ -21,21 +21,18 @@ class BinaryWeightedTree
 {
 public:
     BinaryWeightedTree();
-    BSTNode* search(std::string word);
+    BWTNode* search(std::string word);
     void insert(std::string str);
     void printTree();
     void printTopWords(std::string word);
     
 protected:
-    void printTreeInternal(BSTNode *node);
-    void printTopWordsInternal(BSTNode *node, std::string word);
-    
-    
-    
-    
+    void printTreeInternal(BWTNode *node);
+    void printTopWordsInternal(BWTNode *node, std::string word);
+    void findTopWordsInternal(BWTNode *node, std::string word);
     
 private:
-    BSTNode *m_head;
+    BWTNode *m_head;
     TopWords m_topWords;
 };
 

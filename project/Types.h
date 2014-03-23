@@ -10,16 +10,16 @@
 #define project_Types_h
 
 
-struct BSTNode {
+struct BWTNode {
     std::string word;
     int         weight;
-    BSTNode     *leftChild;
-    BSTNode     *rightChild;
+    BWTNode     *leftChild;
+    BWTNode     *rightChild;
 };
 
 
 struct TopWordNode {
-    BSTNode *bstnode;
+    BWTNode *node;
     TopWordNode *next;
 };
 
