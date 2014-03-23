@@ -51,18 +51,6 @@ void TopWords::insert(BWTNode *bwtnode)
         return;
     }
     
-//    // If list is empty then add node
-//    if (nullptr == m_pHead) {
-//        m_pHead = new TopWordNode;
-//        m_pHead->node = bwtnode;
-//        m_pHead->next = nullptr;
-//        return;
-//    }
-//    // If word is already in list then return
-//    else if (0 == m_pHead->node->word.compare(bwtnode->word)) {
-//        return;
-//    }
-    
     TopWordNode **prev = &m_pHead;
     TopWordNode **curr = &m_pHead;
     
