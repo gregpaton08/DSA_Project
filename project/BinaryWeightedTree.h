@@ -10,17 +10,11 @@
 #define __project__BinarySearchTree__
 
 #include <iostream>
+#include "Types.h"
+#include "TopWords.h"
 
 
 #define NUM_TOP_WORDS 3
-
-
-struct BSTNode {
-    std::string word;
-    int         weight;
-    BSTNode     *leftChild;
-    BSTNode     *rightChild;
-};
 
 
 class BinaryWeightedTree
@@ -37,26 +31,12 @@ protected:
     void printTopWordsInternal(BSTNode *node, std::string word);
     
     
-    class TopWords
-    {
-    public:
-        TopWords(int n = NUM_TOP_WORDS)
-        {
-            *m_pNodes = new BSTNode[n];
-        }
-        ~TopWords()
-        {
-            delete [] m_pNodes;
-        }
-        void insert(BSTNode* node) {}
-        
-    private:
-        BSTNode **m_pNodes;
-    };
+    
     
     
 private:
     BSTNode *m_head;
+    TopWords m_topWords;
 };
 
 
