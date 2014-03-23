@@ -24,8 +24,8 @@ TopWords::~TopWords()
         
         while (nullptr != *curr) {
             delete *prev;
-            *prev = *curr;
-            *curr = (*curr)->next;
+            prev = curr;
+            curr = &(*curr)->next;
         }
         delete *prev;
     }
@@ -51,22 +51,22 @@ void TopWords::insert(BWTNode *bwtnode)
         return;
     }
     
-    // If list is empty then add node
-    if (nullptr == m_pHead) {
-        m_pHead = new TopWordNode;
-        m_pHead->node = bwtnode;
-        m_pHead->next = nullptr;
-        return;
-    }
-    // If word is already in list then return
-    else if (0 == m_pHead->node->word.compare(bwtnode->word)) {
-        return;
-    }
+//    // If list is empty then add node
+//    if (nullptr == m_pHead) {
+//        m_pHead = new TopWordNode;
+//        m_pHead->node = bwtnode;
+//        m_pHead->next = nullptr;
+//        return;
+//    }
+//    // If word is already in list then return
+//    else if (0 == m_pHead->node->word.compare(bwtnode->word)) {
+//        return;
+//    }
     
     TopWordNode **prev = &m_pHead;
-    TopWordNode **curr = &m_pHead->next;
+    TopWordNode **curr = &m_pHead;
     
-    for (int i = 1; i < m_numWords; ++i) {
+    for (int i = 0; i < m_numWords; ++i) {
         // If list is not full then add node
         if (nullptr == *curr) {
             *curr = new TopWordNode;
@@ -83,10 +83,10 @@ void TopWords::insert(BWTNode *bwtnode)
         else if (bwtnode->weight > (*curr)->node->weight ||
                  (bwtnode->weight == (*curr)->node->weight &&
                  bwtnode->word.compare((*curr)->node->word) < 0)) {
-            TopWordNode *newNode = new TopWordNode;
-            newNode->node = bwtnode;
-            newNode->next = *curr;
-            (*prev)->next = newNode;
+            TopWordNode *next = *curr;
+            *prev = new TopWordNode;
+            (*prev)->node = bwtnode;
+            (*prev)->next = next;
             removeLastNode();
             return;
         }
@@ -123,8 +123,8 @@ void TopWords::removeLastNode()
             return;
         }
         else {
-            *prev = *curr;
-            *curr = (*curr)->next;
+            prev = curr;
+            curr = &(*curr)->next;
         }
     }
     

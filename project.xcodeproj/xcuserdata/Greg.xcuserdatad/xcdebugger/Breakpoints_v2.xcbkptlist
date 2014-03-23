@@ -155,22 +155,6 @@
             timestampString = "417297332.943103"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "TopWords::insert(BWTNode *bwtnode)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "project/TopWords.cpp"
-            timestampString = "417297332.943103"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
             endingLineNumber = "69"
             landmarkName = "TopWords::insert(BWTNode *bwtnode)"
@@ -183,12 +167,12 @@
                   symbolName = "TopWords::insert(BWTNode*)"
                   moduleName = "project"
                   urlString = "file:///Users/Greg/code/C++/DSA/Project/project/project/TopWords.cpp"
-                  timestampString = "417296897.196183"
+                  timestampString = "417300505.672471"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "1556">
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "78">
                </Location>
                <Location
                   shouldBeEnabled = "No"
@@ -197,12 +181,12 @@
                   symbolName = "TopWords::insert(BWTNode*)"
                   moduleName = "project"
                   urlString = "file:///Users/Greg/code/C++/DSA/Project/project/project/TopWords.cpp"
-                  timestampString = "417296897.196639"
+                  timestampString = "417300505.672921"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "3180">
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "3131">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -242,45 +226,61 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/TopWords.cpp"
-            timestampString = "417297332.943103"
+            timestampString = "417299964.612816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "TopWords::insert(BWTNode *bwtnode)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "project/TopWords.cpp"
+            timestampString = "417298695.244552"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "TopWords::insert(BWTNode *bwtnode)"
             landmarkType = "5">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "TopWords::insert(BWTNode*)"
                   moduleName = "project"
                   urlString = "file:///Users/Greg/code/C++/DSA/Project/project/project/TopWords.cpp"
-                  timestampString = "417298037.82523"
+                  timestampString = "417299028.845304"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "137">
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "78">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "TopWords::insert(BWTNode*)"
                   moduleName = "project"
                   urlString = "file:///Users/Greg/code/C++/DSA/Project/project/project/TopWords.cpp"
-                  timestampString = "417298037.825664"
+                  timestampString = "417299028.845742"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "1528">
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "3118">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -288,15 +288,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/TopWords.cpp"
-            timestampString = "417297817.164897"
+            timestampString = "417298696.476382"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "TopWords::insert(BWTNode *bwtnode)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "project/TopWords.cpp"
+            timestampString = "417299964.612816"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "TopWords::print()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "project/TopWords.cpp"
+            timestampString = "417300149.659623"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "TopWords::insert(BWTNode *bwtnode)"
             landmarkType = "5">
          </BreakpointContent>

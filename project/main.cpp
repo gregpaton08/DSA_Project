@@ -13,7 +13,7 @@ int main(int argc, const char * argv[])
 {
     BinaryWeightedTree bwt;
     
-    printf("Populate dictionary:\n\n");
+    printf("Populate dictionary:\n");
     
     while (true) {
         std::string input;
