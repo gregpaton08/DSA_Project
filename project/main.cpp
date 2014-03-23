@@ -11,7 +11,7 @@
 
 int main(int argc, const char * argv[])
 {
-    BinarySearchTree bst;
+    BinaryWeightedTree bwt;
     
     while (true) {
         std::string input;
@@ -21,11 +21,12 @@ int main(int argc, const char * argv[])
             break;
         }
         
-        bst.insert(input);
+        bwt.insert(input);
     }
     
     printf("Printing tree...\n");
-    bst.printTree();
+    //bst.printTree();
+    bwt.printTopThree();
     
     return 0;
 }

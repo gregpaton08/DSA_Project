@@ -20,13 +20,14 @@ struct BSTNode {
 };
 
 
-class BinarySearchTree
+class BinaryWeightedTree
 {
 public:
-    BinarySearchTree();
+    BinaryWeightedTree();
     BSTNode* search(std::string word);
     void insert(std::string str);
     void printTree();
+    void printTopThree();
     
 protected:
     void printTreeInternal(BSTNode *node);

@@ -9,13 +9,13 @@
 #include "BinaryWeightedTree.h"
 
 
-BinarySearchTree::BinarySearchTree()
+BinaryWeightedTree::BinaryWeightedTree()
 {
     m_head = nullptr;
 }
 
 
-BSTNode* BinarySearchTree::search(std::string word)
+BSTNode* BinaryWeightedTree::search(std::string word)
 {
     // make string lower case for easier compare
     std::transform(word.begin(), word.end(), word.begin(), ::tolower);
@@ -24,7 +24,7 @@ BSTNode* BinarySearchTree::search(std::string word)
 }
 
 
-void BinarySearchTree::insert(std::string str)
+void BinaryWeightedTree::insert(std::string str)
 {
     // make string lower case for easier compare
     std::transform(str.begin(), str.end(), str.begin(), ::tolower);
@@ -52,13 +52,19 @@ void BinarySearchTree::insert(std::string str)
 }
 
 
-void BinarySearchTree::printTree()
+void BinaryWeightedTree::printTree()
 {
     printTreeInternal(m_head);
 }
 
 
-void BinarySearchTree::printTreeInternal(BSTNode *node)
+void BinaryWeightedTree::printTopThree()
+{
+    
+}
+
+
+void BinaryWeightedTree::printTreeInternal(BSTNode *node)
 {
     // Print tree in depth first order
     
