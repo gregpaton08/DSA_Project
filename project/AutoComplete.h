@@ -19,6 +19,7 @@ public:
     AutoComplete();
     bool insert(std::string word);
     bool printTopWords(std::string word);
+    bool findTopWords(std::string word);
     
 protected:
     int getIndexFromWord(std::string word);

@@ -41,6 +41,19 @@ bool AutoComplete::printTopWords(std::string word)
 }
 
 
+bool AutoComplete::findTopWords(std::string word)
+{
+    int idx = getIndexFromWord(word);
+    if (idx < 0) {
+        return false;
+    }
+    
+    m_bwt[idx].findTopWords(word);
+    
+    return true;
+}
+
+
 int AutoComplete::getIndexFromWord(std::string word)
 {
     if (0 == word.length()) {

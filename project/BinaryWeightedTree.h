@@ -25,6 +25,7 @@ public:
     void insert(std::string str);
     void printTree();
     void printTopWords(std::string word);
+    void findTopWords(std::string word);
     
 protected:
     void printTreeInternal(BWTNode *node);

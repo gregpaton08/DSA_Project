@@ -83,6 +83,14 @@ void BinaryWeightedTree::printTopWords(std::string word)
 }
 
 
+void BinaryWeightedTree::findTopWords(std::string word)
+{
+    BWTNode *node = search(word);
+    
+    findTopWordsInternal(node, word);
+}
+
+
 void BinaryWeightedTree::printTreeInternal(BWTNode *node)
 {
     // Print tree in depth first order
