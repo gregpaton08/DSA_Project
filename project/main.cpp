@@ -78,6 +78,7 @@ void runTestMode(const char *filepath)
 {
     AutoComplete ac;
     clock_t timer;
+    uint64_t wordCount = 0;
     
     std::ifstream file;
     file.open(filepath);
@@ -86,9 +87,11 @@ void runTestMode(const char *filepath)
     while (file >> word) {
         word.erase(std::remove_if(word.begin(), word.end(), isNotAlpha), word.end());
         ac.insert(word);
+        ++wordCount;
     }
     timer = clock() - timer;
     
+    printf("Total words:    %llu\n", wordCount);
     printf("Insertion time: %.3fms\n", (float)(timer * 1000) / CLOCKS_PER_SEC);
     
     std::string input;
