@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37A0F29B18E4F7CD003E1640 /* AutoComplete.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37A0F29918E4F7CD003E1640 /* AutoComplete.cpp */; };
 		37BA345E18DE74DD0046FFC8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37BA345D18DE74DD0046FFC8 /* main.cpp */; };
 		37BA346018DE74DD0046FFC8 /* project.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37BA345F18DE74DD0046FFC8 /* project.1 */; };
 		37BA346818DE74FE0046FFC8 /* BinaryWeightedTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37BA346618DE74FE0046FFC8 /* BinaryWeightedTree.cpp */; };
@@ -27,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		37A0F29918E4F7CD003E1640 /* AutoComplete.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AutoComplete.cpp; sourceTree = "<group>"; };
+		37A0F29A18E4F7CD003E1640 /* AutoComplete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoComplete.h; sourceTree = "<group>"; };
 		37BA345A18DE74DD0046FFC8 /* project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = project; sourceTree = BUILT_PRODUCTS_DIR; };
 		37BA345D18DE74DD0046FFC8 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		37BA345F18DE74DD0046FFC8 /* project.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = project.1; sourceTree = "<group>"; };
@@ -74,6 +77,8 @@
 				37BA346918DF6AA60046FFC8 /* TopWords.cpp */,
 				37BA346A18DF6AA60046FFC8 /* TopWords.h */,
 				37BA346C18DF6C260046FFC8 /* Types.h */,
+				37A0F29918E4F7CD003E1640 /* AutoComplete.cpp */,
+				37A0F29A18E4F7CD003E1640 /* AutoComplete.h */,
 			);
 			path = project;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 				37BA346818DE74FE0046FFC8 /* BinaryWeightedTree.cpp in Sources */,
 				37BA346B18DF6AA60046FFC8 /* TopWords.cpp in Sources */,
 				37BA345E18DE74DD0046FFC8 /* main.cpp in Sources */,
+				37A0F29B18E4F7CD003E1640 /* AutoComplete.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +245,7 @@
 				37BA346518DE74DD0046FFC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

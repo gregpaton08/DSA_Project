@@ -7,11 +7,11 @@
 //
 
 #include <iostream>
-#include "BinaryWeightedTree.h"
+#include "AutoComplete.h"
 
 int main(int argc, const char * argv[])
 {
-    BinaryWeightedTree bwt;
+    AutoComplete ac;
     
     printf("Populate dictionary:\n");
     
@@ -23,18 +23,13 @@ int main(int argc, const char * argv[])
             break;
         }
         
-        bwt.insert(input);
+        ac.insert(input);
     }
     
-#if 0
-    printf("Printing tree...\n");
-    bwt.printTree();
-#else
     printf("Enter word to find matches for:\n");
     std::string input;
     std::cin >> input;
-    bwt.printTopWords(input);
-#endif
+    ac.printTopWords(input);
     
     return 0;
 }
