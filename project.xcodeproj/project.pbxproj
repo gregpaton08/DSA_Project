@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3730076018EA1A0C00018F7F /* Trie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3730075E18EA1A0C00018F7F /* Trie.cpp */; };
 		37A0F29B18E4F7CD003E1640 /* AutoComplete.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37A0F29918E4F7CD003E1640 /* AutoComplete.cpp */; };
 		37BA345E18DE74DD0046FFC8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37BA345D18DE74DD0046FFC8 /* main.cpp */; };
 		37BA346018DE74DD0046FFC8 /* project.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37BA345F18DE74DD0046FFC8 /* project.1 */; };
@@ -28,6 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3730075E18EA1A0C00018F7F /* Trie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Trie.cpp; sourceTree = "<group>"; };
+		3730075F18EA1A0C00018F7F /* Trie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trie.h; sourceTree = "<group>"; };
 		37A0F29918E4F7CD003E1640 /* AutoComplete.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AutoComplete.cpp; sourceTree = "<group>"; };
 		37A0F29A18E4F7CD003E1640 /* AutoComplete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoComplete.h; sourceTree = "<group>"; };
 		37BA345A18DE74DD0046FFC8 /* project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = project; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +82,8 @@
 				37BA346C18DF6C260046FFC8 /* Types.h */,
 				37A0F29918E4F7CD003E1640 /* AutoComplete.cpp */,
 				37A0F29A18E4F7CD003E1640 /* AutoComplete.h */,
+				3730075E18EA1A0C00018F7F /* Trie.cpp */,
+				3730075F18EA1A0C00018F7F /* Trie.h */,
 			);
 			path = project;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 				37BA346B18DF6AA60046FFC8 /* TopWords.cpp in Sources */,
 				37BA345E18DE74DD0046FFC8 /* main.cpp in Sources */,
 				37A0F29B18E4F7CD003E1640 /* AutoComplete.cpp in Sources */,
+				3730076018EA1A0C00018F7F /* Trie.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
