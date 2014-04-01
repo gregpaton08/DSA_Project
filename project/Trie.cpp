@@ -23,26 +23,59 @@ void Trie::insert(std::string word)
 {
     // make string lower case for easier compare
     std::transform(word.begin(), word.end(), word.begin(), ::tolower);
+#if 1
+    int index = (int)word[0] - 97;
+    if (nullptr == m_pChildren[index]) {
+        m_pChildren[index] = new Trie;
+    }
     
     // Call recursive internal method
+    insertInternal(word, m_pChildren[index]);
+#else
     insertInternal(word, this);
+#endif
 }
 
 
 void Trie::insertInternal(std::string word, Trie *node)
 {
     // Base case: empty string
-    if (word.compare("")) {
+    if (0 == word.compare("")) {
         return;
     }
     
-    addSuffix(word.substr(1));
+    //node->addSuffix(word);
+    node->addSuffix(word.substr(1));
+    
+    int index = (int)word[0] - 97;
+    if (nullptr == node->m_pChildren[index]) {
+        node->m_pChildren[index] = new Trie;
+    }
+    
+    insertInternal(word.substr(1), node->m_pChildren[index]);
+}
+
+
+void Trie::printTrie()
+{
+    for (int i = 0; i < NUM_CHILDREN; ++i) {
+        if (nullptr != m_pChildren[i]) {
+            WordNode *suffix = m_pChildren[i]->m_pSuffixes;
+            do {
+                printf("%c", (char)(i + 97));
+                if (nullptr != suffix) {
+                    printf("%s", suffix->word.c_str());
+                }
+                printf("\n");
+            } while (nullptr != (suffix = suffix->next));
+        }
+    }
 }
 
 
 void Trie::addSuffix(std::string suffix)
 {
-    if (suffix.compare("")) {
+    if (0 == suffix.compare("")) {
         return;
     }
     
@@ -52,14 +85,16 @@ void Trie::addSuffix(std::string suffix)
         m_pSuffixes->next = nullptr;
     }
     else {
-        WordNode *curr = m_pSuffixes;
-        WordNode *prev;
-        while (nullptr != (curr = curr->next)) {
-            prev = curr;
+        WordNode **curr = &m_pSuffixes;
+        while (nullptr != (*curr)) {
+//            if (suffix.compare((*curr)->word) >= 0) {
+//                
+//            }
+            (curr = &((*curr)->next));
         }
         
-        prev = new WordNode;
-        prev->word = suffix;
-        prev->next = nullptr;
+        (*curr) = new WordNode;
+        (*curr)->word = suffix;
+        (*curr)->next = nullptr;
     }
 }

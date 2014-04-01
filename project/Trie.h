@@ -19,6 +19,7 @@ class Trie
 public:
     Trie();
     void insert(std::string word);
+    void printTrie();
     
     struct WordNode
     {

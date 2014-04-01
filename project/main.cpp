@@ -9,16 +9,23 @@
 #include <iostream>
 #include <fstream>
 #include "AutoComplete.h"
+#include "Trie.h"
 
 
 void printUsage(const char *argv0);
 void runUserMode();
 void runTestMode(const char *filepath);
+void runUserModeTrie();
 
 
 int main(int argc, const char *argv[])
 {
-    if (3 == argc) {
+    if (true/*2 == argc*/) {
+        //if (0 == strcmp("-trie", argv[1])) {
+            runUserModeTrie();
+        //}
+    }
+    else if (3 == argc) {
         if (0 == strcmp("-t", argv[1])) {
             runTestMode(argv[2]);
         }
@@ -27,8 +34,7 @@ int main(int argc, const char *argv[])
             return -1;
         }
     }
-    
-    if (2 == argc || argc > 3) {
+    else if (argc > 3) {
         printUsage(argv[0]);
         return -1;
     }
@@ -113,5 +119,26 @@ void runTestMode(const char *filepath)
     timer = clock() - timer;
     
     printf("Retrieval time: %.3fms\n", (float)(timer * 1000) / CLOCKS_PER_SEC);
+}
+
+
+void runUserModeTrie()
+{
+    Trie trie;
+    
+    printf("Populate dictionary:\n");
+    
+    while (true) {
+        std::string input;
+        std::cin >> input;
+        
+        if (std::string::npos != input.find("QUIT")) {
+            break;
+        }
+        
+        trie.insert(input);
+    }
+    
+    trie.printTrie();
 }
 
