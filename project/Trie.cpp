@@ -79,22 +79,43 @@ void Trie::addSuffix(std::string suffix)
         return;
     }
     
+    // Start list
     if (nullptr == m_pSuffixes) {
         m_pSuffixes = new WordNode;
         m_pSuffixes->word = suffix;
         m_pSuffixes->next = nullptr;
     }
+    // Add to list
     else {
         WordNode **curr = &m_pSuffixes;
+        WordNode **prev = nullptr;
         while (nullptr != (*curr)) {
-//            if (suffix.compare((*curr)->word) >= 0) {
-//                
-//            }
+            if (suffix.compare((*curr)->word) <= 0) {
+                break;
+            }
+            prev = curr;
             (curr = &((*curr)->next));
         }
         
-        (*curr) = new WordNode;
-        (*curr)->word = suffix;
-        (*curr)->next = nullptr;
+        // Add new node
+        if (nullptr == (*curr)) {
+            (*curr) = new WordNode;
+            (*curr)->word = suffix;
+            (*curr)->next = nullptr;
+        }
+        // Insert head node
+        else if (nullptr == prev) {
+            WordNode *node = new WordNode;
+            node->word = suffix;
+            node->next = (*curr);
+            m_pSuffixes = node;
+        }
+        // Insert node
+        else {
+            WordNode *node = new WordNode;
+            node->word = suffix;
+            node->next = (*prev)->next;
+            (*prev)->next = node;
+        }
     }
 }
