@@ -114,7 +114,39 @@ int Trie::addSuffix(std::string suffix)
 }
 
 
-void Trie::findTopWords(std::string word)
+void Trie::findTopWords(std::string word, std::string prefix)
 {
+    if (0 == word.compare("")) {
+        return;
+    }
+    else if (word.length() == 1) {
+        // print top 3 words
+        std::list<WordNode>::iterator iter = m_pSuffixes.begin();
+        for (int i = 0; i < 3 && i < m_pSuffixes.size(); ++i) {
+            //printf("%s%s\n", prefix.c_str(), iter->word.c_str());
+            ++iter;
+        }
+        return;
+    }
     
+    if (m_pChildren[word[0] - 97]) {
+        m_pChildren[word[0] - 97]->findTopWords(word.substr(1), prefix + word[0]);
+    }
 }
+
+
+void Trie::findTopWordsInternal(std::string word, Trie *node)
+{
+    if (word.length() == 1) {
+        // print top 3 words
+        std::list<WordNode>::iterator iter = m_pSuffixes.begin();
+        for (int i = 0; i < 3 && i < m_pSuffixes.size(); ++i) {
+            //printf("%c%s\n", word[0], iter->word.c_str());
+            ++iter;
+        }
+        return;
+    }
+    
+    findTopWordsInternal(word.substr(1), m_pChildren[word[1] - 97]);
+}
+

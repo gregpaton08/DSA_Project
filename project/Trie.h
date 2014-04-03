@@ -21,7 +21,7 @@ public:
     Trie();
     void insert(std::string word);
     void printTrie();
-    void findTopWords(std::string word);
+    void findTopWords(std::string word, std::string prefix = "");
     
     class WordNode
     {
@@ -41,10 +41,10 @@ public:
 protected:
     void insertInternal(std::string word, Trie *node);
     int addSuffix(std::string suffix);
+    void findTopWordsInternal(std::string word, Trie *node);
     
 private:
     Trie *m_pChildren[NUM_CHILDREN];
-    //WordNode *m_pSuffixes;
     std::list<WordNode> m_pSuffixes;
 };
 
