@@ -10,6 +10,7 @@
 #define __project__Trie__
 
 #include <iostream>
+#include <list>
 
 #define NUM_CHILDREN 26
 
@@ -20,20 +21,31 @@ public:
     Trie();
     void insert(std::string word);
     void printTrie();
+    void findTopWords(std::string word);
     
-    struct WordNode
+    class WordNode
     {
+    public:
+        WordNode()
+        {
+            word = "";
+            weight = 0;
+        }
+        
+    public:
         std::string word;
-        WordNode *next;
+        int weight;
+        //WordNode *next;
     };
     
 protected:
     void insertInternal(std::string word, Trie *node);
-    void addSuffix(std::string suffix);
+    int addSuffix(std::string suffix);
     
 private:
     Trie *m_pChildren[NUM_CHILDREN];
-    WordNode *m_pSuffixes;
+    //WordNode *m_pSuffixes;
+    std::list<WordNode> m_pSuffixes;
 };
 
 

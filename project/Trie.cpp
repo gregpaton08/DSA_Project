@@ -9,13 +9,17 @@
 #include "Trie.h"
 
 
+bool suffixCompFunc(Trie::WordNode a, Trie::WordNode b)
+{
+    return a.weight > b.weight;
+}
+
+
 Trie::Trie()
 {
     for (int i = 0; i < NUM_CHILDREN; ++i) {
         m_pChildren[i] = nullptr;
     }
-    
-    m_pSuffixes = nullptr;
 }
 
 
@@ -45,9 +49,15 @@ void Trie::insertInternal(std::string word, Trie *node)
     }
     
     //node->addSuffix(word);
-    node->addSuffix(word.substr(1));
+    if (1 == node->addSuffix(word.substr(1))) {
+        return;
+    }
     
-    int index = (int)word[0] - 97;
+    if (1 == word.length()) {
+        return;
+    }
+    
+    int index = (int)word[1] - 97;
     if (nullptr == node->m_pChildren[index]) {
         node->m_pChildren[index] = new Trie;
     }
@@ -60,62 +70,51 @@ void Trie::printTrie()
 {
     for (int i = 0; i < NUM_CHILDREN; ++i) {
         if (nullptr != m_pChildren[i]) {
-            WordNode *suffix = m_pChildren[i]->m_pSuffixes;
-            do {
+            for (std::list<WordNode>::iterator iter = m_pSuffixes.begin(); iter != m_pSuffixes.end(); ++iter) {
                 printf("%c", (char)(i + 97));
-                if (nullptr != suffix) {
-                    printf("%s", suffix->word.c_str());
-                }
+                printf("%s", iter->word.c_str());
                 printf("\n");
-            } while (nullptr != (suffix = suffix->next));
+            }
         }
     }
 }
 
 
-void Trie::addSuffix(std::string suffix)
+int Trie::addSuffix(std::string suffix)
 {
     if (0 == suffix.compare("")) {
-        return;
+        return 0;
     }
     
     // Start list
-    if (nullptr == m_pSuffixes) {
-        m_pSuffixes = new WordNode;
-        m_pSuffixes->word = suffix;
-        m_pSuffixes->next = nullptr;
+    if (m_pSuffixes.size() == 0) {
+        WordNode node;
+        node.word = suffix;
+        m_pSuffixes.push_back(node);
     }
     // Add to list
     else {
-        WordNode **curr = &m_pSuffixes;
-        WordNode **prev = nullptr;
-        while (nullptr != (*curr)) {
-            if (suffix.compare((*curr)->word) <= 0) {
+        for (std::list<WordNode>::iterator iter = m_pSuffixes.begin(); iter != m_pSuffixes.end(); ++iter) {
+            int compRet = suffix.compare(iter->word);
+            if (compRet == 0) {
+                ++iter->weight;
+                m_pSuffixes.sort(suffixCompFunc);
                 break;
             }
-            prev = curr;
-            (curr = &((*curr)->next));
-        }
-        
-        // Add new node
-        if (nullptr == (*curr)) {
-            (*curr) = new WordNode;
-            (*curr)->word = suffix;
-            (*curr)->next = nullptr;
-        }
-        // Insert head node
-        else if (nullptr == prev) {
-            WordNode *node = new WordNode;
-            node->word = suffix;
-            node->next = (*curr);
-            m_pSuffixes = node;
-        }
-        // Insert node
-        else {
-            WordNode *node = new WordNode;
-            node->word = suffix;
-            node->next = (*prev)->next;
-            (*prev)->next = node;
+            else if (compRet < 0) {
+                WordNode node;
+                node.word = suffix;
+                m_pSuffixes.insert(iter, node);
+                break;
+            }
         }
     }
+    
+    return 0;
+}
+
+
+void Trie::findTopWords(std::string word)
+{
+    
 }

@@ -10,24 +10,29 @@
 #include <fstream>
 #include "AutoComplete.h"
 #include "Trie.h"
+#include "MemUsage.h"
 
 
 void printUsage(const char *argv0);
 void runUserMode();
 void runTestMode(const char *filepath);
 void runUserModeTrie();
+void runTestModeTrie(const char *filepath);
 
 
 int main(int argc, const char *argv[])
 {
-    if (true/*2 == argc*/) {
-        //if (0 == strcmp("-trie", argv[1])) {
+    if (2 == argc) {
+        if (0 == strcmp("-trie", argv[1])) {
             runUserModeTrie();
-        //}
+        }
     }
     else if (3 == argc) {
         if (0 == strcmp("-t", argv[1])) {
             runTestMode(argv[2]);
+        }
+        else if (0 == strcmp("-trie", argv[1])) {
+            runTestModeTrie(argv[2]);
         }
         else {
             printUsage(argv[0]);
@@ -142,3 +147,50 @@ void runUserModeTrie()
     trie.printTrie();
 }
 
+
+void runTestModeTrie(const char *filepath)
+{
+    Trie trie;
+    clock_t timer;
+    uint64_t wordCount = 0;
+    
+    std::ifstream file;
+    file.open(filepath);
+    std::string word;
+    timer = clock();
+    
+    while (file >> word) {
+        word.erase(std::remove_if(word.begin(), word.end(), isNotAlpha), word.end());
+        trie.insert(word);
+        ++wordCount;
+    }
+    
+    timer = clock() - timer;
+    
+    printf("Total words:    %llu\n", wordCount);
+    printf("Insertion time: %.3fms\n", (float)(timer * 1000) / CLOCKS_PER_SEC);
+    
+    MemUsage mem;
+    printf("Memory: %lu\n", mem.Usage() / 1024);
+#if 0
+    std::string input;
+    timer = clock();
+    for (char a = 'a'; a <= 'z'; ++a) {
+        input = a;
+        trie.findTopWords(input);
+        for (char b = 'a'; b <= 'z'; ++b) {
+            input = input.substr(0, 1) + b;
+            trie.findTopWords(input);
+            for (char c = 'a'; c <= 'z'; ++c) {
+                trie.findTopWords(input);
+                input = input.substr(0, 2) + c;
+            }
+            input = input.substr(0, 1);
+        }
+        input = "";
+    }
+    timer = clock() - timer;
+    
+    printf("Retrieval time: %.3fms\n", (float)(timer * 1000) / CLOCKS_PER_SEC);
+#endif
+}

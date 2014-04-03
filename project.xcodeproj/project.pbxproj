@@ -31,6 +31,7 @@
 /* Begin PBXFileReference section */
 		3730075E18EA1A0C00018F7F /* Trie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Trie.cpp; sourceTree = "<group>"; };
 		3730075F18EA1A0C00018F7F /* Trie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trie.h; sourceTree = "<group>"; };
+		3730076118EBA33100018F7F /* MemUsage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemUsage.h; sourceTree = "<group>"; };
 		37A0F29918E4F7CD003E1640 /* AutoComplete.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AutoComplete.cpp; sourceTree = "<group>"; };
 		37A0F29A18E4F7CD003E1640 /* AutoComplete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoComplete.h; sourceTree = "<group>"; };
 		37BA345A18DE74DD0046FFC8 /* project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = project; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +85,7 @@
 				37A0F29A18E4F7CD003E1640 /* AutoComplete.h */,
 				3730075E18EA1A0C00018F7F /* Trie.cpp */,
 				3730075F18EA1A0C00018F7F /* Trie.h */,
+				3730076118EBA33100018F7F /* MemUsage.h */,
 			);
 			path = project;
 			sourceTree = "<group>";
