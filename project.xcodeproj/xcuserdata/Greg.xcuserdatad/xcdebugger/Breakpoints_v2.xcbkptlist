@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/main.cpp"
-            timestampString = "418521011.531525"
+            timestampString = "418585679.77675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "main(int argc, const char *argv[])"
             landmarkType = "7">
          </BreakpointContent>
@@ -307,22 +307,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "project/main.cpp"
-            timestampString = "418521011.531525"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "runUserModeTrie()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "project/Trie.cpp"
             timestampString = "418270865.925185"
             startingColumnNumber = "9223372036854775807"
@@ -417,302 +401,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "project/main.cpp"
-            timestampString = "418521011.531525"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
-            landmarkName = "runTestModeTrie(const char *filepath)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "project/main.cpp"
-            timestampString = "418521011.531525"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
-            landmarkName = "runTestModeTrie(const char *filepath)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "project/main.cpp"
-            timestampString = "418521011.531525"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
-            landmarkName = "runTestModeTrie(const char *filepath)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "runTestModeTrie(char const*)"
-                  moduleName = "project"
-                  urlString = "file:///Users/Greg/code/C++/DSA/Project/project/project/main.cpp"
-                  timestampString = "418180622.616078"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "163"
-                  endingLineNumber = "163"
-                  offsetFromSymbolStart = "1283">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "runTestModeTrie(char const*)"
-                  moduleName = "project"
-                  urlString = "file:///Users/Greg/code/C++/DSA/Project/project/project/main.cpp"
-                  timestampString = "418180622.616588"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "163"
-                  endingLineNumber = "163"
-                  offsetFromSymbolStart = "1834">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "runTestModeTrie(char const*)"
-                  moduleName = "project"
-                  urlString = "file:///Users/Greg/code/C++/DSA/Project/project/project/main.cpp"
-                  timestampString = "418180622.616931"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "163"
-                  endingLineNumber = "163"
-                  offsetFromSymbolStart = "2593">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "runTestModeTrie(char const*)"
-                  moduleName = "project"
-                  urlString = "file:///Users/Greg/code/C++/DSA/Project/project/project/main.cpp"
-                  timestampString = "418180622.617299"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "163"
-                  endingLineNumber = "163"
-                  offsetFromSymbolStart = "2701">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "runTestModeTrie(char const*)"
-                  moduleName = "project"
-                  urlString = "file:///Users/Greg/code/C++/DSA/Project/project/project/main.cpp"
-                  timestampString = "418180622.617671"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "163"
-                  endingLineNumber = "163"
-                  offsetFromSymbolStart = "3258">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "project/Trie.cpp"
-            timestampString = "418270865.925185"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "Trie::findTopWordsInternal(std::string word, Trie *node)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "project/Trie.cpp"
             timestampString = "418270865.925185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "127"
             endingLineNumber = "127"
-            landmarkName = "Trie::findTopWords(std::string word, std::string prefix)"
+            landmarkName = "Trie::findTopWordsInternal(std::string word, std::string prefix)"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "project/Trie.cpp"
-            timestampString = "418270865.925185"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "Trie::findTopWordsInternal(std::string word, Trie *node)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Trie::findTopWordsInternal(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt;, Trie*)"
-                  moduleName = "project"
-                  urlString = "file:///Users/Greg/code/C++/DSA/Project/project/project/Trie.cpp"
-                  timestampString = "418186861.179572"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "131"
-                  endingLineNumber = "131"
-                  offsetFromSymbolStart = "84">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Trie::findTopWordsInternal(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt;, Trie*)"
-                  moduleName = "project"
-                  urlString = "file:///Users/Greg/code/C++/DSA/Project/project/project/Trie.cpp"
-                  timestampString = "418186861.180013"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "131"
-                  endingLineNumber = "131"
-                  offsetFromSymbolStart = "210">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "project/Trie.cpp"
-            timestampString = "418270865.925185"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
-            landmarkName = "Trie::findTopWordsInternal(std::string word, Trie *node)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Trie::findTopWordsInternal(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt;, Trie*)"
-                  moduleName = "project"
-                  urlString = "file:///Users/Greg/code/C++/DSA/Project/project/project/Trie.cpp"
-                  timestampString = "418521011.560658"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "151"
-                  endingLineNumber = "151"
-                  offsetFromSymbolStart = "433">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Trie::findTopWordsInternal(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt;, Trie*)"
-                  moduleName = "project"
-                  urlString = "file:///Users/Greg/code/C++/DSA/Project/project/project/Trie.cpp"
-                  timestampString = "418521011.561079"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "151"
-                  endingLineNumber = "151"
-                  offsetFromSymbolStart = "527">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Trie::findTopWordsInternal(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt;, Trie*)"
-                  moduleName = "project"
-                  urlString = "file:///Users/Greg/code/C++/DSA/Project/project/project/Trie.cpp"
-                  timestampString = "418521011.561435"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "151"
-                  endingLineNumber = "151"
-                  offsetFromSymbolStart = "583">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "project/Trie.cpp"
-            timestampString = "418270865.925185"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
-            landmarkName = "Trie::findTopWordsInternal(std::string word, Trie *node)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Trie::findTopWordsInternal(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt;, Trie*)"
-                  moduleName = "project"
-                  urlString = "file:///Users/Greg/code/C++/DSA/Project/project/project/Trie.cpp"
-                  timestampString = "418187924.810758"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "133"
-                  endingLineNumber = "133"
-                  offsetFromSymbolStart = "775">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Trie::findTopWordsInternal(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt;, Trie*)"
-                  moduleName = "project"
-                  urlString = "file:///Users/Greg/code/C++/DSA/Project/project/project/Trie.cpp"
-                  timestampString = "418187924.812515"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "133"
-                  endingLineNumber = "133"
-                  offsetFromSymbolStart = "1052">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -727,7 +423,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "133"
             endingLineNumber = "133"
-            landmarkName = "Trie::findTopWords(std::string word, std::string prefix)"
+            landmarkName = "Trie::findTopWordsInternal(std::string word, std::string prefix)"
             landmarkType = "5">
             <Locations>
                <Location
@@ -787,7 +483,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
             endingLineNumber = "141"
-            landmarkName = "Trie::findTopWords(std::string word, std::string prefix)"
+            landmarkName = "Trie::findTopWordsInternal(std::string word, std::string prefix)"
             landmarkType = "5">
             <Locations>
                <Location
@@ -906,12 +602,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/main.cpp"
-            timestampString = "418521011.531525"
+            timestampString = "418585679.77675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "runTestMode(const char *filepath)"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "runTestMode(const char *filepath, int n)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -922,12 +618,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/main.cpp"
-            timestampString = "418521011.531525"
+            timestampString = "418585679.77675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "runTestMode(const char *filepath)"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "runTestMode(const char *filepath, int n)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -945,6 +641,22 @@
             endingLineNumber = "159"
             landmarkName = "BinaryWeightedTree::findTopWordsInternal(BWTNode *node, std::string word)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "project/main.cpp"
+            timestampString = "418585722.740784"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "runTestMode(const char *filepath, int n)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

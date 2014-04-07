@@ -8,41 +8,66 @@
 
 #include <iostream>
 #include <fstream>
-#include "AutoComplete.h"
 #include "Trie.h"
 #include "MemUsage.h"
+#include "BinaryWeightedTree.h"
+
+
+enum AC_Type {
+    AC_BWT = 0,
+    AC_TRIE
+};
 
 
 void printUsage(const char *argv0);
-void runUserMode();
-void runTestMode(const char *filepath);
-void runUserModeTrie();
-void runTestModeTrie(const char *filepath);
+void runUserMode(AC_Type type);
+void runTestMode(AC_Type type, const char *filepath, int n = INT_MAX);
+
+
+MemUsage mem;
 
 
 int main(int argc, const char *argv[])
 {
     if (2 == argc) {
-        if (0 == strcmp("-trie", argv[1])) {
-            runUserModeTrie();
-        }
-        else if (0 == strcmp("-bwt", argv[1])) {
-            runUserMode();
-        }
-    }
-    else if (3 == argc) {
         if (0 == strcmp("-bwt", argv[1])) {
-            runTestMode(argv[2]);
+            runUserMode(AC_BWT);
         }
         else if (0 == strcmp("-trie", argv[1])) {
-            runTestModeTrie(argv[2]);
+            runUserMode(AC_TRIE);
         }
         else {
             printUsage(argv[0]);
             return -1;
         }
     }
-    else if (argc > 3) {
+    else if (3 == argc) {
+        if (0 == strcmp("-bwt", argv[1])) {
+            runTestMode(AC_BWT, argv[2]);
+        }
+        else if (0 == strcmp("-trie", argv[1])) {
+            runTestMode(AC_TRIE, argv[2]);
+        }
+        else {
+            printUsage(argv[0]);
+            return -1;
+        }
+    }
+    if (4 == argc) {
+        int n = atoi(argv[3]);
+        if (0 == strcmp("-bwt", argv[1]) && n > 0) {
+            runTestMode(AC_BWT, argv[2], n);
+        }
+        else if (0 == strcmp("-trie", argv[1]) && n > 0) {
+            runTestMode(AC_TRIE, argv[2], n);
+        }
+        else {
+            printUsage(argv[0]);
+            return -1;
+        }
+
+    }
+    else {
         printUsage(argv[0]);
         return -1;
     }
@@ -54,14 +79,25 @@ int main(int argc, const char *argv[])
 
 void printUsage(const char *argv0)
 {
-    printf("Usage:     %s\n", argv0);
-    printf("Test mode: %s -t <filepath>\n", argv0);
+    printf("User mode: %s -bwt\n", argv0);
+    printf("           %s -trie\n", argv0);
+    printf("Test mode: %s -bwt  <filepath>\n", argv0);
+    printf("           %s -trie <filepath>\n", argv0);
 }
 
 
-void runUserMode()
+void runUserMode(AC_Type type)
 {
-    AutoComplete ac;
+    AutoComplete *pAc;
+    if (type == AC_BWT) {
+        pAc = (AutoComplete*)new BWTAC;
+    }
+    else if (type == AC_TRIE) {
+        pAc = (AutoComplete*)new Trie;
+    }
+    else {
+        return;
+    }
     
     printf("Populate dictionary:\n");
     
@@ -73,13 +109,13 @@ void runUserMode()
             break;
         }
         
-        ac.insert(input);
+        pAc->insert(input);
     }
     
     printf("Enter word to find matches for:\n");
     std::string input;
     std::cin >> input;
-    ac.printTopWords(input);
+    pAc->printTopWords(input);
 }
 
 
@@ -88,84 +124,34 @@ bool isNotAlpha(int c)
     return !std::isalpha(c);
 }
 
-void runTestMode(const char *filepath)
+void runTestMode(AC_Type type, const char *filepath, int n)
 {
-    AutoComplete ac;
+    AutoComplete *pAc;
+    if (type == AC_BWT) {
+        pAc = (AutoComplete*)new BWTAC;
+    }
+    else if (type == AC_TRIE) {
+        pAc = (AutoComplete*)new Trie;
+    }
+    else {
+        return;
+    }
+    
     clock_t timer;
     uint64_t wordCount = 0;
     
     std::ifstream file;
     file.open(filepath);
     std::string word;
+    int count = 0;
+    
     timer = clock();
     
-    while (file >> word) {
+    // Read all words from a file
+    while (file >> word && count++ < n) {
+        // Remove non-letter characters
         word.erase(std::remove_if(word.begin(), word.end(), isNotAlpha), word.end());
-        ac.insert(word);
-        ++wordCount;
-    }
-    timer = clock() - timer;
-    
-    printf("Total words:    %llu\n", wordCount);
-    printf("Insertion time: %.3fms\n", (float)(timer * 1000) / CLOCKS_PER_SEC);
-    
-    std::string input;
-    timer = clock();
-    for (char a = 'a'; a <= 'z'; ++a) {
-        input = a;
-        ac.findTopWords(input);
-        for (char b = 'a'; b <= 'z'; ++b) {
-            input = input.substr(0, 1) + b;
-            ac.findTopWords(input);
-            for (char c = 'a'; c <= 'z'; ++c) {
-                ac.findTopWords(input);
-                input = input.substr(0, 2) + c;
-            }
-            input = input.substr(0, 1);
-        }
-        input = "";
-    }
-    timer = clock() - timer;
-    
-    printf("Retrieval time: %.3fms\n", (float)(timer * 1000) / CLOCKS_PER_SEC);
-}
-
-
-void runUserModeTrie()
-{
-    Trie trie;
-    
-    printf("Populate dictionary:\n");
-    
-    while (true) {
-        std::string input;
-        std::cin >> input;
-        
-        if (std::string::npos != input.find("QUIT")) {
-            break;
-        }
-        
-        trie.insert(input);
-    }
-    
-    trie.printTrie();
-}
-
-
-void runTestModeTrie(const char *filepath)
-{
-    Trie trie;
-    clock_t timer;
-    uint64_t wordCount = 0;
-    
-    std::ifstream file;
-    file.open(filepath);
-    std::string word;
-    timer = clock();
-    
-    while (file >> word) {
-        word.erase(std::remove_if(word.begin(), word.end(), isNotAlpha), word.end());
-        trie.insert(word);
+        pAc->insert(word);
         ++wordCount;
     }
     
@@ -174,19 +160,18 @@ void runTestModeTrie(const char *filepath)
     printf("Total words:    %llu\n", wordCount);
     printf("Insertion time: %.3fms\n", (float)(timer * 1000) / CLOCKS_PER_SEC);
     
-    MemUsage mem;
-    printf("Memory: %lu\n", mem.Usage() / 1024);
+    printf("Mem usage:      %lu\n", mem.Usage());
     
     std::string input;
     timer = clock();
     for (char a = 'a'; a <= 'z'; ++a) {
         input = a;
-        trie.findTopWords(input);
+        pAc->findTopWords(input);
         for (char b = 'a'; b <= 'z'; ++b) {
             input = input.substr(0, 1) + b;
-            trie.findTopWords(input);
+            pAc->findTopWords(input);
             for (char c = 'a'; c <= 'z'; ++c) {
-                trie.findTopWords(input);
+                pAc->findTopWords(input);
                 input = input.substr(0, 2) + c;
             }
             input = input.substr(0, 1);

@@ -11,17 +11,19 @@
 
 #include <iostream>
 #include <list>
+#include "AutoComplete.h"
 
 #define NUM_CHILDREN 26
 
 
-class Trie
+class Trie : AutoComplete
 {
 public:
     Trie();
-    void insert(std::string word);
+    virtual bool insert(std::string word);
+    virtual bool printTopWords(std::string word) { return false; }
     void printTrie();
-    void findTopWords(std::string word, std::string prefix = "");
+    virtual bool findTopWords(std::string word);
     
     class WordNode
     {
@@ -41,7 +43,7 @@ public:
 protected:
     void insertInternal(std::string word, Trie *node);
     int addSuffix(std::string suffix);
-    void findTopWordsInternal(std::string word, Trie *node);
+    void findTopWordsInternal(std::string word, std::string prefix);
     
 private:
     Trie *m_pChildren[NUM_CHILDREN];

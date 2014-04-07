@@ -28,7 +28,7 @@ Trie::Trie()
 }
 
 
-void Trie::insert(std::string word)
+bool Trie::insert(std::string word)
 {
     // make string lower case for easier compare
     std::transform(word.begin(), word.end(), word.begin(), ::tolower);
@@ -40,6 +40,8 @@ void Trie::insert(std::string word)
     
     // Call recursive internal method
     insertInternal(word, m_pChildren[index]);
+    
+    return true;
 }
 
 
@@ -122,7 +124,15 @@ int Trie::addSuffix(std::string suffix)
 }
 
 
-void Trie::findTopWords(std::string word, std::string prefix)
+bool Trie::findTopWords(std::string word)
+{
+    findTopWordsInternal(word, "");
+    
+    return true;
+}
+
+
+void Trie::findTopWordsInternal(std::string word, std::string prefix)
 {
     if (0 == word.compare("")) {
         return;
@@ -138,23 +148,9 @@ void Trie::findTopWords(std::string word, std::string prefix)
     }
     
     if (m_pChildren[word[0] - 97]) {
-        m_pChildren[word[0] - 97]->findTopWords(word.substr(1), prefix + word[0]);
-    }
-}
-
-
-void Trie::findTopWordsInternal(std::string word, Trie *node)
-{
-    if (word.length() == 1) {
-        // print top 3 words
-        std::list<WordNode>::iterator iter = m_pSuffixes.begin();
-        for (int i = 0; i < 3 && i < m_pSuffixes.size(); ++i) {
-            //printf("%c%s\n", word[0], iter->word.c_str());
-            ++iter;
-        }
-        return;
+        m_pChildren[word[0] - 97]->findTopWordsInternal(word.substr(1), prefix + word[0]);
     }
     
-    findTopWordsInternal(word.substr(1), m_pChildren[word[1] - 97]);
+    return;
 }
 

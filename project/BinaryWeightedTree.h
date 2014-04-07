@@ -12,6 +12,7 @@
 #include <iostream>
 #include "Types.h"
 #include "TopWords.h"
+#include "AutoComplete.h"
 
 
 #define NUM_TOP_WORDS 3
@@ -35,6 +36,49 @@ protected:
 private:
     BWTNode *m_head;
     TopWords m_topWords;
+};
+
+
+class BWTAC : AutoComplete
+{
+public:
+    BWTAC() { }
+    virtual bool insert(std::string word)
+    {
+        int idx = getIndexFromWord(word);
+        if (idx < 0) {
+            return false;
+        }
+        
+        m_bwt[idx].insert(word);
+        
+        return true;
+    }
+    virtual bool printTopWords(std::string word)
+    {
+        int idx = getIndexFromWord(word);
+        if (idx < 0) {
+            return false;
+        }
+        
+        m_bwt[idx].printTopWords(word);
+        
+        return true;
+    }
+    virtual bool findTopWords(std::string word)
+    {
+        int idx = getIndexFromWord(word);
+        if (idx < 0) {
+            return false;
+        }
+        
+        m_bwt[idx].findTopWords(word);
+        
+        return true;
+    }
+    
+private:
+    BinaryWeightedTree m_bwt[26];   // One binary weighted tree for each letter
 };
 
 

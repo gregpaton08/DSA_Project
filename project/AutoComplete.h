@@ -10,22 +10,34 @@
 #define __project__AutoComplete__
 
 #include <iostream>
-#include "BinaryWeightedTree.h"
 
 
 class AutoComplete
 {
 public:
-    AutoComplete();
-    bool insert(std::string word);
-    bool printTopWords(std::string word);
-    bool findTopWords(std::string word);
+    AutoComplete() {}
+    virtual bool insert(std::string word) = 0;
+    virtual bool findTopWords(std::string word) = 0;
+    virtual bool printTopWords(std::string word) = 0;
     
-protected:
-    int getIndexFromWord(std::string word);
-    
-private:
-    BinaryWeightedTree m_bwt[26];   // One binary weighted tree for each letter
+    static int getIndexFromWord(std::string word)
+    {
+        if (0 == word.length()) {
+            return -1;
+        }
+        
+        char c = word[0];
+        int idx = (int)c - 97;
+        if ((int)c < 97) {
+            idx = (int)c - 65;
+        }
+        
+        if (idx < 0 || idx > 25) {
+            return -1;
+        }
+        
+        return idx;
+    }
 };
 
 

@@ -45,13 +45,10 @@ public:
     {
         task_t targetTask = mach_task_self();
         struct task_basic_info ti;
-        mach_msg_type_number_t count = TASK_BASIC_INFO_COUNT;
-        //mach_msg_type_number_t count = TASK_BASIC_INFO_64_COUNT;
+        mach_msg_type_number_t count = TASK_BASIC_INFO_64_COUNT;
         
-        kern_return_t kr = task_info(targetTask, TASK_BASIC_INFO,
+        kern_return_t kr = task_info(targetTask, TASK_BASIC_INFO_64,
                                      (task_info_t) &ti, &count);
-//        kern_return_t kr = task_info(targetTask, TASK_BASIC_INFO_64,
-//                                     (task_info_t) &ti, &count);
         if (kr != KERN_SUCCESS) {
             printf("Kernel returned error during memory usage query");
             return -1;
