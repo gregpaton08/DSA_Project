@@ -9,9 +9,14 @@
 #include "Trie.h"
 
 
-bool suffixCompFunc(Trie::WordNode a, Trie::WordNode b)
+bool suffixCompWeightFunc(Trie::WordNode a, Trie::WordNode b)
 {
     return a.weight > b.weight;
+}
+
+bool suffixCompWordFun(Trie::WordNode a, Trie::WordNode b)
+{
+    return a.word.compare(b.word) < 0;
 }
 
 
@@ -27,7 +32,7 @@ void Trie::insert(std::string word)
 {
     // make string lower case for easier compare
     std::transform(word.begin(), word.end(), word.begin(), ::tolower);
-#if 1
+    
     int index = (int)word[0] - 97;
     if (nullptr == m_pChildren[index]) {
         m_pChildren[index] = new Trie;
@@ -35,9 +40,6 @@ void Trie::insert(std::string word)
     
     // Call recursive internal method
     insertInternal(word, m_pChildren[index]);
-#else
-    insertInternal(word, this);
-#endif
 }
 
 
@@ -48,7 +50,7 @@ void Trie::insertInternal(std::string word, Trie *node)
         return;
     }
     
-    //node->addSuffix(word);
+    // Returns 1 if word is already in list
     if (1 == node->addSuffix(word.substr(1))) {
         return;
     }
@@ -94,20 +96,26 @@ int Trie::addSuffix(std::string suffix)
     }
     // Add to list
     else {
+        std::list<WordNode>::iterator locIter = m_pSuffixes.end();
         for (std::list<WordNode>::iterator iter = m_pSuffixes.begin(); iter != m_pSuffixes.end(); ++iter) {
             int compRet = suffix.compare(iter->word);
+            // If word is in the list then increment the weight and sort
             if (compRet == 0) {
                 ++iter->weight;
-                m_pSuffixes.sort(suffixCompFunc);
-                break;
+                m_pSuffixes.sort(suffixCompWordFun);
+                m_pSuffixes.sort(suffixCompWeightFunc);
+                return 0;
             }
-            else if (compRet < 0) {
-                WordNode node;
-                node.word = suffix;
-                m_pSuffixes.insert(iter, node);
-                break;
+            // Store where word should be inserted if the word is not in the list
+            else if (compRet < 0 && iter->weight == 0) {
+                if (locIter == m_pSuffixes.end()) {
+                    locIter = iter;
+                }
             }
         }
+        WordNode node;
+        node.word = suffix;
+        m_pSuffixes.insert(locIter, node);
     }
     
     return 0;

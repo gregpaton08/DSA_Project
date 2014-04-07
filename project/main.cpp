@@ -26,6 +26,9 @@ int main(int argc, const char *argv[])
         if (0 == strcmp("-trie", argv[1])) {
             runUserModeTrie();
         }
+        else if (0 == strcmp("-bwt", argv[1])) {
+            runUserMode();
+        }
     }
     else if (3 == argc) {
         if (0 == strcmp("-bwt", argv[1])) {
@@ -95,8 +98,8 @@ void runTestMode(const char *filepath)
     file.open(filepath);
     std::string word;
     timer = clock();
-    int cnt = 0;
-    while (file >> word && ++cnt < 100000) {
+    
+    while (file >> word) {
         word.erase(std::remove_if(word.begin(), word.end(), isNotAlpha), word.end());
         ac.insert(word);
         ++wordCount;
@@ -160,8 +163,7 @@ void runTestModeTrie(const char *filepath)
     std::string word;
     timer = clock();
     
-    int cnt = 0;
-    while (file >> word && ++cnt < 100000) {
+    while (file >> word) {
         word.erase(std::remove_if(word.begin(), word.end(), isNotAlpha), word.end());
         trie.insert(word);
         ++wordCount;
@@ -174,7 +176,7 @@ void runTestModeTrie(const char *filepath)
     
     MemUsage mem;
     printf("Memory: %lu\n", mem.Usage() / 1024);
-#if 1
+    
     std::string input;
     timer = clock();
     for (char a = 'a'; a <= 'z'; ++a) {
@@ -194,5 +196,4 @@ void runTestModeTrie(const char *filepath)
     timer = clock() - timer;
     
     printf("Retrieval time: %.3fms\n", (float)(timer * 1000) / CLOCKS_PER_SEC);
-#endif
 }
