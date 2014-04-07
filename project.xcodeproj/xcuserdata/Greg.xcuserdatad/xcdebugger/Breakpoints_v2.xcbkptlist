@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/main.cpp"
-            timestampString = "418589181.652503"
+            timestampString = "418590697.371003"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "main(int argc, const char *argv[])"
             landmarkType = "7">
          </BreakpointContent>
@@ -324,11 +324,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/Trie.cpp"
-            timestampString = "418588436.411383"
+            timestampString = "418590697.371003"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "Trie::printTrie()"
             landmarkType = "5">
             <Locations>
@@ -370,11 +370,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/Trie.cpp"
-            timestampString = "418588436.411383"
+            timestampString = "418590697.371003"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "Trie::addSuffix(std::string suffix)"
             landmarkType = "5">
          </BreakpointContent>
@@ -386,11 +386,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/Trie.cpp"
-            timestampString = "418588436.411383"
+            timestampString = "418590697.371003"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "Trie::printTrie()"
             landmarkType = "5">
          </BreakpointContent>
@@ -402,11 +402,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/Trie.cpp"
-            timestampString = "418588436.411383"
+            timestampString = "418590697.371003"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "Trie::findTopWordsInternal(std::string word, std::string prefix)"
             landmarkType = "5">
          </BreakpointContent>
@@ -418,11 +418,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/Trie.cpp"
-            timestampString = "418588436.411383"
+            timestampString = "418590697.371003"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "Trie::findTopWordsInternal(std::string word, std::string prefix)"
             landmarkType = "5">
             <Locations>
@@ -478,11 +478,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/Trie.cpp"
-            timestampString = "418588436.411383"
+            timestampString = "418590697.371003"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "Trie::findTopWordsInternal(std::string word, std::string prefix)"
             landmarkType = "5">
             <Locations>
@@ -524,11 +524,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/Trie.cpp"
-            timestampString = "418588436.411383"
+            timestampString = "418590697.371003"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "Trie::addSuffix(std::string suffix)"
             landmarkType = "5">
             <Locations>
@@ -570,11 +570,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/Trie.cpp"
-            timestampString = "418588436.411383"
+            timestampString = "418590697.371003"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "Trie::addSuffix(std::string suffix)"
             landmarkType = "5">
          </BreakpointContent>
@@ -586,11 +586,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/Trie.cpp"
-            timestampString = "418588436.411383"
+            timestampString = "418590697.371003"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "Trie::addSuffix(std::string suffix)"
             landmarkType = "5">
          </BreakpointContent>
@@ -602,12 +602,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/main.cpp"
-            timestampString = "418589181.652503"
+            timestampString = "418590697.371003"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
-            landmarkName = "runTestMode(AC_Type type, const char *filepath, int n)"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "runTestMode(AC_Type type, const char *filepath, int n, int len)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -634,12 +634,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/main.cpp"
-            timestampString = "418589181.652503"
+            timestampString = "418590697.371003"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
-            landmarkName = "runTestMode(AC_Type type, const char *filepath, int n)"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "runTestMode(AC_Type type, const char *filepath, int n, int len)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -650,11 +650,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "project/main.cpp"
-            timestampString = "418589181.652503"
+            timestampString = "418590697.371003"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "search(AutoComplete *pAc, int length, std::string word, int n)"
             landmarkType = "7">
             <Locations>
@@ -687,6 +687,22 @@
                   offsetFromSymbolStart = "1037">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "project/main.cpp"
+            timestampString = "418590682.7147"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "runUserMode(AC_Type type)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

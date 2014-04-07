@@ -70,6 +70,35 @@ void Trie::insertInternal(std::string word, Trie *node)
 }
 
 
+bool Trie::printTopWords(std::string word)
+{
+    printTopWordsInternal(word, "");
+    
+    return true;
+}
+
+
+void Trie::printTopWordsInternal(std::string word, std::string prefix)
+{
+    // Base case
+    if (word.length() == 0/*1*/) {
+        // print top 3 words
+        std::list<WordNode>::iterator iter = m_pSuffixes.begin();
+        for (int i = 0; i < 3 && i < m_pSuffixes.size(); ++i) {
+            printf("%s%s\n", prefix.c_str(), iter->word.c_str());
+            ++iter;
+        }
+        return;
+    }
+    
+    if (m_pChildren[word[0] - 97]) {
+        m_pChildren[word[0] - 97]->printTopWordsInternal(word.substr(1), prefix + word[0]);
+    }
+    
+    return;
+}
+
+
 void Trie::printTrie()
 {
     for (int i = 0; i < NUM_CHILDREN; ++i) {
@@ -134,10 +163,8 @@ bool Trie::findTopWords(std::string word)
 
 void Trie::findTopWordsInternal(std::string word, std::string prefix)
 {
-    if (0 == word.compare("")) {
-        return;
-    }
-    else if (word.length() == 1) {
+    // Base case
+    if (word.length() == 0) {
         // print top 3 words
         std::list<WordNode>::iterator iter = m_pSuffixes.begin();
         for (int i = 0; i < 3 && i < m_pSuffixes.size(); ++i) {

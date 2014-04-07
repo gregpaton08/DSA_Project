@@ -21,7 +21,7 @@ class Trie : AutoComplete
 public:
     Trie();
     virtual bool insert(std::string word);
-    virtual bool printTopWords(std::string word) { return false; }
+    virtual bool printTopWords(std::string word);
     void printTrie();
     virtual bool findTopWords(std::string word);
     
@@ -43,6 +43,7 @@ public:
 protected:
     void insertInternal(std::string word, Trie *node);
     int addSuffix(std::string suffix);
+    void printTopWordsInternal(std::string word, std::string prefix);
     void findTopWordsInternal(std::string word, std::string prefix);
     
 private:

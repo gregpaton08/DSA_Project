@@ -64,8 +64,12 @@
             isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "-bwt rand_text.txt 1000"
+            argument = "-trie"
             isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-bwt rand_text.txt 1000"
+            isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "-bwt words.txt"
