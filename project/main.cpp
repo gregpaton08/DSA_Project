@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
 #include "Trie.h"
 #include "MemUsage.h"
 #include "BinaryWeightedTree.h"
@@ -21,7 +22,8 @@ enum AC_Type {
 
 void printUsage(const char *argv0);
 void runUserMode(AC_Type type);
-void runTestMode(AC_Type type, const char *filepath, int n = INT_MAX);
+void runTestMode(AC_Type type, const char *filepath, int n = INT_MAX, int len = 3);
+void search(AutoComplete *pAc, int length, std::string word = "", int n = -1);
 
 
 MemUsage mem;
@@ -53,7 +55,7 @@ int main(int argc, const char *argv[])
             return -1;
         }
     }
-    if (4 == argc) {
+    else if (4 == argc) {
         int n = atoi(argv[3]);
         if (0 == strcmp("-bwt", argv[1]) && n > 0) {
             runTestMode(AC_BWT, argv[2], n);
@@ -65,7 +67,22 @@ int main(int argc, const char *argv[])
             printUsage(argv[0]);
             return -1;
         }
-
+        
+    }
+    else if (5 == argc) {
+        int n   = atoi(argv[3]);
+        int len = atoi(argv[4]);
+        if (0 == strcmp("-bwt", argv[1]) && n > 0 && len > 0) {
+            runTestMode(AC_BWT, argv[2], n, len);
+        }
+        else if (0 == strcmp("-trie", argv[1]) && n > 0 && len > 0) {
+            runTestMode(AC_TRIE, argv[2], n, len);
+        }
+        else {
+            printUsage(argv[0]);
+            return -1;
+        }
+        
     }
     else {
         printUsage(argv[0]);
@@ -83,6 +100,10 @@ void printUsage(const char *argv0)
     printf("           %s -trie\n", argv0);
     printf("Test mode: %s -bwt  <filepath>\n", argv0);
     printf("           %s -trie <filepath>\n", argv0);
+    printf("           %s -bwt  <filepath> <num words>\n", argv0);
+    printf("           %s -trie <filepath> <num words>\n", argv0);
+    printf("           %s -bwt  <filepath> <num words> <max suffix length>\n", argv0);
+    printf("           %s -trie <filepath> <num words> <max suffix length>\n", argv0);
 }
 
 
@@ -124,7 +145,7 @@ bool isNotAlpha(int c)
     return !std::isalpha(c);
 }
 
-void runTestMode(AC_Type type, const char *filepath, int n)
+void runTestMode(AC_Type type, const char *filepath, int n, int len)
 {
     AutoComplete *pAc;
     if (type == AC_BWT) {
@@ -164,21 +185,31 @@ void runTestMode(AC_Type type, const char *filepath, int n)
     
     std::string input;
     timer = clock();
-    for (char a = 'a'; a <= 'z'; ++a) {
-        input = a;
-        pAc->findTopWords(input);
-        for (char b = 'a'; b <= 'z'; ++b) {
-            input = input.substr(0, 1) + b;
-            pAc->findTopWords(input);
-            for (char c = 'a'; c <= 'z'; ++c) {
-                pAc->findTopWords(input);
-                input = input.substr(0, 2) + c;
-            }
-            input = input.substr(0, 1);
-        }
-        input = "";
-    }
+    
+    search(pAc, len);
+    
     timer = clock() - timer;
     
     printf("Retrieval time: %.3fms\n", (float)(timer * 1000) / CLOCKS_PER_SEC);
+}
+
+
+void search(AutoComplete *pAc, int length, std::string word, int n) {
+    // First call
+    if (n == -1) {
+        n = length;
+    }
+    // Base case
+    else if (n == 0) {
+        return;
+    }
+    
+    std::string tempWord = word.c_str();
+    for (char a = 'a'; a <= 'z'; ++a) {
+        tempWord += a;
+        //printf("%s\n", tempWord.c_str());
+        pAc->findTopWords(tempWord);
+        search(pAc, length, tempWord, n - 1);
+        tempWord = word;
+    }
 }
