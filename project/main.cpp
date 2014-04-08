@@ -192,7 +192,9 @@ void runTestMode(AC_Type type, const char *filepath, int n, int len)
     numSearches = 0;
     timer = clock();
     
-    search(pAc, len);
+    while (numSearches < 11881376) {
+        search(pAc, len);
+    }
     
     timer = clock() - timer;
     
