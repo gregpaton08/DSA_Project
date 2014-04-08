@@ -19,6 +19,8 @@ enum AC_Type {
     AC_TRIE
 };
 
+static int numSearches;
+
 
 void printUsage(const char *argv0);
 void runUserMode(AC_Type type);
@@ -72,10 +74,10 @@ int main(int argc, const char *argv[])
     else if (5 == argc) {
         int n   = atoi(argv[3]);
         int len = atoi(argv[4]);
-        if (0 == strcmp("-bwt", argv[1]) && n > 0 && len > 0) {
+        if (0 == strcmp("-bwt", argv[1]) && n > 0 && len >= 0) {
             runTestMode(AC_BWT, argv[2], n, len);
         }
-        else if (0 == strcmp("-trie", argv[1]) && n > 0 && len > 0) {
+        else if (0 == strcmp("-trie", argv[1]) && n > 0 && len >= 0) {
             runTestMode(AC_TRIE, argv[2], n, len);
         }
         else {
@@ -183,7 +185,11 @@ void runTestMode(AC_Type type, const char *filepath, int n, int len)
     
     printf("Mem usage:      %lu\n", mem.Usage());
     
-    std::string input;
+    if (len == 0) {
+        return;
+    }
+    
+    numSearches = 0;
     timer = clock();
     
     search(pAc, len);
@@ -191,6 +197,7 @@ void runTestMode(AC_Type type, const char *filepath, int n, int len)
     timer = clock() - timer;
     
     printf("Retrieval time: %.3fms\n", (float)(timer * 1000) / CLOCKS_PER_SEC);
+    printf("Num searches:   %d\n", numSearches);
 }
 
 
@@ -208,7 +215,10 @@ void search(AutoComplete *pAc, int length, std::string word, int n) {
     for (char a = 'a'; a <= 'z'; ++a) {
         tempWord += a;
         //printf("%s\n", tempWord.c_str());
-        pAc->findTopWords(tempWord);
+        if (n == 1) {
+            pAc->findTopWords(tempWord);
+            ++numSearches;
+        }
         search(pAc, length, tempWord, n - 1);
         tempWord = word;
     }
