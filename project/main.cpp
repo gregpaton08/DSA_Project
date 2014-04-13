@@ -122,7 +122,7 @@ void runUserMode(AC_Type type)
         return;
     }
     
-    printf("Populate dictionary:\n");
+    printf("Populate dictionary (type 'QUIT' when done):\n");
     
     while (true) {
         std::string input;
