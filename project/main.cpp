@@ -11,6 +11,7 @@
 #include <string>
 #include <string.h>
 #include <climits>
+#include <algorithm>
 #include "Trie.h"
 #ifdef __APPLE__
 #include "MemUsage.h"
