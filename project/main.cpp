@@ -9,6 +9,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <string.h>
 #include "Trie.h"
 #ifdef __APPLE__
 #include "MemUsage.h"
