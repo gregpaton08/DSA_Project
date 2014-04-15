@@ -7,6 +7,7 @@
 //
 
 #include "Trie.h"
+#include <algorithm>
 
 
 bool suffixCompWeightFunc(Trie::WordNode a, Trie::WordNode b)

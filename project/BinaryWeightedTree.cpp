@@ -7,6 +7,7 @@
 //
 
 #include "BinaryWeightedTree.h"
+#include <algorithm>
 
 
 BinaryWeightedTree::BinaryWeightedTree()

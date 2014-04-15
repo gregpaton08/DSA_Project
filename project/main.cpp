@@ -10,6 +10,7 @@
 #include <fstream>
 #include <string>
 #include <string.h>
+#include <climits>
 #include "Trie.h"
 #ifdef __APPLE__
 #include "MemUsage.h"
