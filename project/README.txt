@@ -1,3 +1,5 @@
+Run on Mac OSX 10.9.2.
+
 Call make to compile.
 Binary is named 'autocomplete'.
 
