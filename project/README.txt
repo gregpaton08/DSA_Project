@@ -20,3 +20,8 @@ To run using a limited number of words from that file run
 To run specifying the length of the search string run
 	./autocomplete -bwt rand_text.txt 10000 2
 default value is 3.
+
+
+
+
+https://github.com/gregpaton08/DSA_Project
