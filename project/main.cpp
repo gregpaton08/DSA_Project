@@ -10,7 +10,9 @@
 #include <fstream>
 #include <string>
 #include "Trie.h"
+#ifdef __APPLE__
 #include "MemUsage.h"
+#endif
 #include "BinaryWeightedTree.h"
 
 
@@ -27,8 +29,9 @@ void runUserMode(AC_Type type);
 void runTestMode(AC_Type type, const char *filepath, int n = INT_MAX, int len = 3);
 void search(AutoComplete *pAc, int length, std::string word = "", int n = -1);
 
-
+#ifdef __APPLE__
 MemUsage mem;
+#endif
 
 
 int main(int argc, const char *argv[])
@@ -182,8 +185,9 @@ void runTestMode(AC_Type type, const char *filepath, int n, int len)
     
     printf("Total words:    %llu\n", wordCount);
     printf("Insertion time: %.3fms\n", (float)(timer * 1000) / CLOCKS_PER_SEC);
-    
+#ifdef __APPLE
     printf("Mem usage:      %lu\n", mem.Usage());
+#endif
     
     if (len == 0) {
         return;
